@@ -22,7 +22,9 @@
           <td>Name</td>
           <td>Email</td>
           <td>Phone</td>
-          <td>Password</td>
+          <td>Sex</td>
+          <td>Course</td>
+          <td>Active</td>
           <td class="text-center">Action</td>
         </tr>
     </thead>
@@ -33,7 +35,9 @@
             <td>{{$students->name}}</td>
             <td>{{$students->email}}</td>
             <td>{{$students->phone}}</td>
-            <td>{{$students->password}}</td>
+            <td>{{$students->sex}}</td>
+            <td>{{$students->course}}</td>
+            <td>{{$students->active}}</td>
             <td class="text-center">
                 <a href="{{ route('students.edit', $students->id)}}" class="btn btn-primary btn-sm"">Edit</a>
                 <form action="{{ route('students.destroy', $students->id)}}" method="post" style="display: inline-block">
