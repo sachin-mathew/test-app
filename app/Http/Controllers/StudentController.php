@@ -38,8 +38,7 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-
+    {        
         $storeData = $request->validate([
             'name'   => 'required|max:255',
             'email'  => 'required|max:255',

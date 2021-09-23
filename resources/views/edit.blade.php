@@ -70,7 +70,7 @@
                 No
               </label>
           </div>
-          <button type="submit" class="btn btn-block btn-danger">Update Student</button>
+          <button type="submit" class="btn btn-block btn-primary">Update Student</button>
       </form>
   </div>
 </div>
