@@ -38,7 +38,7 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {        
+    {  
         $storeData = $request->validate([
             'name'   => 'required|max:255',
             'email'  => 'required|max:255',
@@ -46,7 +46,9 @@ class StudentController extends Controller
             'sex'    => 'required|max:255',
             'course' => 'required|max:255',
             'active' => 'required|max:255',
+            'hobbies' => 'required',
         ]);
+        $storeData['hobbies'] = implode(", ",$storeData['hobbies']);
         $student = Student::create($storeData);
 
         return redirect('/students')->with('completed', 'Student has been saved!');
@@ -92,7 +94,9 @@ class StudentController extends Controller
             'sex'    => 'required|max:255',
             'course' => 'required|max:255',
             'active' => 'required|max:255',
+            'hobbies' => 'required',
         ]);
+        $updateData['hobbies'] = implode(", ",$updateData['hobbies']);
         Student::whereId($id)->update($updateData);
         return redirect('/students')->with('completed', 'Student has been updated');
     }

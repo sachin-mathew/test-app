@@ -21,20 +21,20 @@
       <form method="post" action="{{ route('students.store') }}">
           <div class="form-group">
               @csrf
-              <label for="name">Name</label>
-              <input type="text" required class="form-control" name="name"/>
+              <label for="name">Name</label><br/>
+              <input type="text" required name="name"/>
           </div>
           <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" required class="form-control" name="email"/>
+              <label for="email">Email</label><br/>
+              <input type="email" required name="email"/>
           </div>
           <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" required class="form-control" name="phone"/>
+              <label for="phone">Phone</label><br/>
+              <input type="tel" required name="phone"/>
           </div>
           <div>
-            <label for="course">Course</label>
-            <select class="form-control m-bot15" required name="course">
+            <label for="course">Course</label><br/>
+            <select class="m-bot15" required name="course">
                 <option value="">- Select -</option>
                 @if ($courses->count())
                     @foreach($courses as $course)
@@ -57,6 +57,13 @@
                 <input type="radio" name="sex" value="o" />
                 Others
               </label>
+          </div>
+          <div class="form-group">
+              <label for="hobbies">Hobbies</label><br/>
+              <input type="checkbox" name="hobbies[]" value="singing"> Singing 
+              <input type="checkbox" name="hobbies[]" value="dancing"> Dancing 
+              <input type="checkbox" name="hobbies[]" value="drawing"> Drawing 
+              <input type="checkbox" name="hobbies[]" value="others"> Others <br/>
           </div>
           <div class="form-group">
               <p>Active</p>
