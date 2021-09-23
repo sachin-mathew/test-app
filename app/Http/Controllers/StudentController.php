@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Courses;
 
 
 class StudentController extends Controller
@@ -26,7 +27,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('create');
+        $courses = Courses::all();
+        return view('create', compact('courses'));
     }
 
     /**
@@ -37,6 +39,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+
         $storeData = $request->validate([
             'name'   => 'required|max:255',
             'email'  => 'required|max:255',
