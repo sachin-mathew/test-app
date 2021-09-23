@@ -78,7 +78,7 @@
                 No
               </label>
           </div>
-          <button type="submit" class="btn btn-block btn-danger">Create User</button>
+          <button type="submit" class="btn btn-block btn-danger">Create Student</button>
       </form>
   </div>
 </div>
