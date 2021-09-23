@@ -18,7 +18,7 @@
   <table class="table">
     <thead>
         <tr class="table-warning">
-          <td>IDsss</td>
+          <td>ID</td>
           <td>Name</td>
           <td>Email</td>
           <td>Phone</td>
