@@ -45,15 +45,7 @@
               </select>
           </div>
           <div class="form-group">
-              <label for="hobbies">Hobbies</label><br/>
-              <?php $hobbies=explode(", ",$student->hobbies); ?>
-              <input type="checkbox" {{ in_array('singing', $hobbies) ? 'checked' : '' }} name="hobbies[]" value="singing"> Singing 
-              <input type="checkbox" {{ in_array('dancing', $hobbies) ? 'checked' : '' }} name="hobbies[]" value="dancing"> Dancing 
-              <input type="checkbox" {{ in_array('drawing', $hobbies) ? 'checked' : '' }} name="hobbies[]" value="drawing"> Drawing 
-              <input type="checkbox" {{ in_array('others', $hobbies) ? 'checked' : '' }} name="hobbies[]" value="others"> Others <br/>
-          </div>
-          <div class="form-group">
-              <p >Sex</p>
+              <br/><label for="sex">Sex</label><br/>
               <label for="radio_1">
                 <input type="radio" {{ $student->sex == 'm' ? 'checked' : '' }} name="sex" value="m" />
                 Male
@@ -66,6 +58,14 @@
                 <input type="radio" {{ $student->sex == 'o' ? 'checked' : '' }} name="sex" value="o" />
                 Others
               </label>
+          </div>
+          <div class="form-group">
+              <label for="hobbies">Hobbies</label><br/>
+              <?php $hobbies=explode(", ",$student->hobbies); ?>
+              <input type="checkbox" {{ in_array('singing', $hobbies) ? 'checked' : '' }} name="hobbies[]" value="singing"> Singing 
+              <input type="checkbox" {{ in_array('dancing', $hobbies) ? 'checked' : '' }} name="hobbies[]" value="dancing"> Dancing 
+              <input type="checkbox" {{ in_array('drawing', $hobbies) ? 'checked' : '' }} name="hobbies[]" value="drawing"> Drawing 
+              <input type="checkbox" {{ in_array('others', $hobbies) ? 'checked' : '' }} name="hobbies[]" value="others"> Others <br/>
           </div>
           <div class="form-group">
               <p>Active</p>
