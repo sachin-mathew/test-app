@@ -23,19 +23,19 @@
               @csrf
               @method('PATCH')
               <label for="name">Name</label>
-              <input type="text" name="name" value="{{ $student->name }}"/>
+              <input type="text" class="form-control" name="name" value="{{ $student->name }}"/>
           </div>
           <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" name="email" value="{{ $student->email }}"/>
+              <input type="email" class="form-control" name="email" value="{{ $student->email }}"/>
           </div>
           <div class="form-group">
               <label for="phone">Phone</label>
-              <input type="tel" name="phone" value="{{ $student->phone }}"/>
+              <input type="tel" class="form-control" name="phone" value="{{ $student->phone }}"/>
           </div>
           <div class="form-group">
               <label for="course">Course</label>
-              <select class="m-bot15" required name="course">
+              <select class="form-control" required name="course">
                   <option value="">- Select -</option>
                   @if ($courses->count())
                       @foreach($courses as $course)

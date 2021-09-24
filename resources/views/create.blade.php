@@ -22,19 +22,19 @@
           <div class="form-group">
               @csrf
               <label for="name">Name</label><br/>
-              <input type="text" required name="name"/>
+              <input type="text" class="form-control" required name="name"/>
           </div>
           <div class="form-group">
               <label for="email">Email</label><br/>
-              <input type="email" required name="email"/>
+              <input type="email" class="form-control" required name="email"/>
           </div>
           <div class="form-group">
               <label for="phone">Phone</label><br/>
-              <input type="tel" required name="phone"/>
+              <input type="tel" class="form-control" required name="phone"/>
           </div>
           <div>
             <label for="course">Course</label><br/>
-            <select class="m-bot15" required name="course">
+            <select class="form-control" required name="course">
                 <option value="">- Select -</option>
                 @if ($courses->count())
                     @foreach($courses as $course)
