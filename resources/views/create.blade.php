@@ -44,7 +44,7 @@
             </select>
           </div>
           <div class="form-group">
-              <p >Sex</p>
+              <br/><label for="sex">Sex</label><br/>
               <label for="radio_1">
                 <input type="radio" checked name="sex" value="m" />
                 Male
