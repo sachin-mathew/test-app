@@ -18,6 +18,15 @@
   </div>
 
   <div class="card-body">
+      @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+        </div><br />
+      @endif  
       <form method="post" action="{{ route('students.store') }}">
           <div class="form-group">
               @csrf
@@ -46,15 +55,15 @@
           <div class="form-group">
               <br/><label for="sex">Sex</label><br/>
               <label for="radio_1">
-                <input type="radio" checked name="sex" value="m" />
+                <input type="radio" checked name="sex" value="male" />
                 Male
               </label>
               <label for="radio_2">
-                <input type="radio" name="sex" value="f" />
+                <input type="radio" name="sex" value="female" />
                 Female
               </label>
               <label for="radio_3">
-                <input type="radio" name="sex" value="o" />
+                <input type="radio" name="sex" value="others" />
                 Others
               </label>
           </div>
