@@ -44,19 +44,32 @@
             </select>
           </div>
           <div class="form-group">
-              <p >Sex</p>
+              <!-- <p >Sex</p>
               <label for="radio_1">
                 <input type="radio" checked name="sex" value="m" />
                 Male
               </label>
               <label for="radio_2">
                 <input type="radio" name="sex" value="f" />
-                Femaledddd
+                Female
               </label>
               <label for="radio_3">
                 <input type="radio" name="sex" value="o" />
                 Others
-              </label>
+              </label> -->
+              <br/><label for="sex">Sex</label><br/>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="sex" id="sex" value="m">
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="sex" id="sex" value="f">
+                <label class="form-check-label" for="inlineRadio1">Female</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="sex" id="sex" value="o">
+                <label class="form-check-label" for="inlineRadio1">Others</label>
+              </div>
           </div>
           <div class="form-group">
               <label for="hobbies">Hobbies</label><br/>
