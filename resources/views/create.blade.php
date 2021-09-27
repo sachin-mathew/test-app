@@ -18,7 +18,7 @@
   </div>
 
   <div class="card-body">
-      <form method="post" action="{{ route('students.store') }}">
+      <form method="post" action="{{ route('students.store') }}" onsubmit="return onsubmitForm(this)">
           <div class="form-group">
               @csrf
               <label for="name">Name</label><br/>
@@ -93,4 +93,26 @@
       </form>
   </div>
 </div>
+
+<script>
+  function onsubmitForm(form)
+  {
+    var ajax = new XMLHttpRequest();
+    ajax .open("POST",form.getAttribute("action"),true);
+    var formData = new FormData(form);
+    ajax.send(formData);
+
+    ajax.onreadystatechange = function(){
+      if(this.readyState == 4 && this.status == 200){
+        var data  = JSON.parse(this.responseText);
+        alert(data.status+ "-" +data.message);
+      }
+      if(this.status == 500){
+        alert(this.responseText);
+      }
+    }
+
+  }
+</script>
+
 @endsection

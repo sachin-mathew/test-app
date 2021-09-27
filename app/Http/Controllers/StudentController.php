@@ -51,7 +51,12 @@ class StudentController extends Controller
         $storeData['hobbies'] = implode(", ",$storeData['hobbies']);
         $student = Student::create($storeData);
 
-        return redirect('/students')->with('completed', 'Student has been saved!');
+        return response()->json([
+            "status"  => "Success",
+            "message" => "Student Created Successfully"
+        ]);
+
+        //return redirect('/students')->with('completed', 'Student has been saved!');
     }
 
     /**
