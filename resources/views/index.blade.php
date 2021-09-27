@@ -42,11 +42,11 @@
             <td>{{$students->active}}</td>
             <td>{{$students->hobbies}}</td>
             <td class="text-center">
-                <a href="{{ route('students.edit', $students->id)}}" class="btn btn-primary btn-sm"">Edit</a>
+                <a href="{{ route('students.edit', $students->id)}}" class="btn btn-primary btn-sm">Edit</a>
                 <form action="{{ route('students.destroy', $students->id)}}" method="post" style="display: inline-block">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger btn-sm"" type="submit">Delete</button>
+                  <button class="btn btn-danger btn-sm" type="submit">Delete</button>
                 </form>
             </td>
         </tr>

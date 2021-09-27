@@ -53,7 +53,7 @@ class StudentController extends Controller
 
         return response()->json([
             "status"  => "Success",
-            "message" => "Student Created Successfully"
+            "message" => "Student has been saved successfully"
         ]);
 
         //return redirect('/students')->with('completed', 'Student has been saved!');
@@ -103,7 +103,13 @@ class StudentController extends Controller
         ]);
         $updateData['hobbies'] = implode(", ",$updateData['hobbies']);
         Student::whereId($id)->update($updateData);
-        return redirect('/students')->with('completed', 'Student has been updated');
+        
+        return response()->json([
+            "status"  => "Success",
+            "message" => "Student has been updated successfully"
+        ]);
+
+        //return redirect('/students')->with('completed', 'Student has been updated');
     }
 
     /**
