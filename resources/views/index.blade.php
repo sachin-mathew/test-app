@@ -54,4 +54,26 @@
     </tbody>
   </table>
 <div>
+
+<script>
+  function onsubmitForm(form)
+  {
+    var ajax = new XMLHttpRequest();
+    ajax .open("POST",form.getAttribute("action"),true);
+    // var formData = new FormData(form);
+    // ajax.send(formData);
+
+    ajax.onreadystatechange = function(){
+      if(this.readyState == 4 && this.status == 200){
+        var data  = JSON.parse(this.responseText);
+        alert(data.status+ "-" +data.message);
+      }
+      if(this.status == 500){
+        alert(this.responseText);
+      }
+    }
+
+  }
+</script>
+
 @endsection

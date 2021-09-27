@@ -123,6 +123,11 @@ class StudentController extends Controller
         $student = Student::findOrFail($id);
         $student->delete();
 
-        return redirect('/students')->with('completed', 'Student has been deleted');
+        return response()->json([
+            "status"  => "Success",
+            "message" => "Student has been deleted successfully"
+        ]);
+
+        // return redirect('/students')->with('completed', 'Student has been deleted');
     }
 }
