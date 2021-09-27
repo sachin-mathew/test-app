@@ -17,7 +17,15 @@
   </div>
 
   <div class="card-body">
-    
+      @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+        </div><br />
+      @endif
       <form method="post" action="{{ route('students.update', $student->id) }}">
           <div class="form-group">
               @csrf
@@ -45,27 +53,27 @@
               </select>
           </div>
           <div class="form-group">
+              <br/><label for="sex">Sex</label><br/>
+              <label for="radio_1">
+                <input type="radio" {{ $student->sex == 'male' ? 'checked' : '' }} name="sex" value="male" />
+                Male
+              </label>
+              <label for="radio_2">
+                <input type="radio" {{ $student->sex == 'female' ? 'checked' : '' }} name="sex" value="female" />
+                Female
+              </label>
+              <label for="radio_3">
+                <input type="radio" {{ $student->sex == 'others' ? 'checked' : '' }} name="sex" value="others" />
+                Others
+              </label>
+          </div>
+          <div class="form-group">
               <label for="hobbies">Hobbies</label><br/>
               <?php $hobbies=explode(", ",$student->hobbies); ?>
               <input type="checkbox" {{ in_array('singing', $hobbies) ? 'checked' : '' }} name="hobbies[]" value="singing"> Singing 
               <input type="checkbox" {{ in_array('dancing', $hobbies) ? 'checked' : '' }} name="hobbies[]" value="dancing"> Dancing 
               <input type="checkbox" {{ in_array('drawing', $hobbies) ? 'checked' : '' }} name="hobbies[]" value="drawing"> Drawing 
               <input type="checkbox" {{ in_array('others', $hobbies) ? 'checked' : '' }} name="hobbies[]" value="others"> Others <br/>
-          </div>
-          <div class="form-group">
-              <p >Sex</p>
-              <label for="radio_1">
-                <input type="radio" {{ $student->sex == 'm' ? 'checked' : '' }} name="sex" value="m" />
-                Male
-              </label>
-              <label for="radio_2">
-                <input type="radio" {{ $student->sex == 'f' ? 'checked' : '' }} name="sex" value="f" />
-                Female
-              </label>
-              <label for="radio_3">
-                <input type="radio" {{ $student->sex == 'o' ? 'checked' : '' }} name="sex" value="o" />
-                Others
-              </label>
           </div>
           <div class="form-group">
               <p>Active</p>
