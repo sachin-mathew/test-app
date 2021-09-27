@@ -60,9 +60,7 @@
   {
     var ajax = new XMLHttpRequest();
     ajax .open("POST",form.getAttribute("action"),true);
-    // var formData = new FormData(form);
-    // ajax.send(formData);
-
+    
     ajax.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
         var data  = JSON.parse(this.responseText);
